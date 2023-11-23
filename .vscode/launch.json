@@ -1,0 +1,50 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "lldb",
+      "request": "launch",
+      "name": "Debug",
+      "program": "${workspaceFolder}/<path_to_your_executable>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/lyale/Desktop/FullStack bootcamp/Exercises/Week-2/lesson 3/js",
+      "program": "c:/Users/lyale/Desktop/FullStack bootcamp/Exercises/Week-2/lesson 3/js/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "startChrome",
+        "type": "shell",
+        "command": "google-chrome",
+        "args": [
+          "--remote-debugging-port=9222",
+          "http://localhost:3000"
+        ],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+}

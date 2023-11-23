@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>User Form</title>
+  </head>
+  <body>
+    <div id="form-container">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" />
+      </div>
+      <div>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" placeholder="Enter your salary" />
+      </div>
+      <div>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" />
+      </div>
+      <div>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" />
+      </div>
+      <button onclick="validateForm()">Submit</button>
+    </div>
+
+    <div id="error-message"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
