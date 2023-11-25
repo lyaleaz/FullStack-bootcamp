@@ -47,3 +47,20 @@ const setCounter = function (num) {
 
 const increment = setCounter(2);
 increment();
+
+//Spot check 1
+function Family() {
+  const members = [];
+
+  const birth = function (name) {
+    members.push(name);
+    console.log("Mazel tov! New member:", name);
+    console.log("Updated members:", members);
+  };
+
+  return birth;
+}
+const giveBirth = Family();
+giveBirth("Alice");
+giveBirth("Bob");
+giveBirth("Charlie");
