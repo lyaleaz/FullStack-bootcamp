@@ -1,4 +1,4 @@
-const Tweeter = function () {
+const PostTweet = function () {
   const _posts = [
     {
       text: "First post!",
@@ -75,7 +75,7 @@ const Tweeter = function () {
     removeComment,
   };
 };
-const tweeter = Tweeter();
+const tweeter = PostTweet();
 
 // tweeter.addPost("This is my own post!");
 // console.log(tweeter.getPosts());
