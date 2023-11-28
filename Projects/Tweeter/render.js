@@ -36,7 +36,8 @@ const renderPost = function (_posts) {
     let divs = "<div></div>";
     $("#posts").val("");
     for (let j of i.comments) {
-      const deletX = "<span class='delete-comment'>x</span>";
+      const deletX =
+        "<span class='delete-comment' data-comment-id='" + j.id + "'>x</span>";
       let divComment = $(
         "<div class='comments' id=" +
           j.id +
@@ -46,13 +47,14 @@ const renderPost = function (_posts) {
           j.text +
           "</div>"
       );
+
       $("#" + i.id).append(divComment);
     }
 
     const newtext =
       "<input id=input" + i.id + " placeholder = 'comment?' class='text'>";
     const newbtn =
-      "<button class='commentBtn' id='btn'" + i.id + ">comment</button>";
+      "<button class='commentBtn' id=btn" + i.id + ">comment</button>";
     //const commentsDiv = $("<div class='comments-container'></div>");
     // console.log(commentsDiv);
     $("#" + i.id).append(divs);
@@ -60,7 +62,10 @@ const renderPost = function (_posts) {
     $("#" + i.id).append(newtext);
     $("#" + i.id).append(newbtn);
 
-    const delBtn = "<br><br><button class='delete'>delete comment</button>";
+    const delBtn =
+      "<br><br><button class='delete' id = del" +
+      i.id +
+      "data-btn=delete> Delete Post</button>";
     $("#" + i.id).append(delBtn);
   }
 
