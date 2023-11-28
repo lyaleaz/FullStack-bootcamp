@@ -10,9 +10,9 @@ const post = function () {
   renderPost(po);
 };
 $("#posts").on("click", ".commentBtn", function () {
-  const postId = $(this).attr("id").slice(3);
+  const postId = $(this).siblings("input").val();
   const cm = $("#input" + postId).val();
-  tweet.addComment(cm, postId);
+  tweet.addComment(postId, cm);
   // const ps = tweet.getPosts();
   renderPost(tweet.getPosts());
 });
