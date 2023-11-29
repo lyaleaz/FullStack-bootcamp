@@ -8,4 +8,13 @@ const fruits = [
   { name: "Persimmon", color: "orange" },
   { name: "Pumpkin", color: "orange" },
 ];
-const basket = document.getElementById("basket");
+const basketElement = document.getElementById("basket");
+
+for (const fruit of fruits) {
+  const fruitDiv = document.createElement("div");
+  fruitDiv.textContent = fruit.name;
+
+  fruitDiv.classList.add(fruit.color);
+
+  basketElement.appendChild(fruitDiv);
+}
