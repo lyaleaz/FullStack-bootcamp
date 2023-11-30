@@ -1,0 +1,29 @@
+.text{
+  background-color: #f39c12;
+  max-width:500px;
+  min-height: 50px;
+}
+#fixed-width{
+  background-color: red;
+  height: 50px;
+  width: 500px
+}
+
+#flexible{
+    background-color: red;
+  height: 50px;
+  width: 25%
+}
+
+#static{
+  font-size: 20px;
+}
+
+#dynamic{
+  font-size: 1vw;
+}
+@media(max-width: 768px){
+  input{
+    display: block;
+  }
+}

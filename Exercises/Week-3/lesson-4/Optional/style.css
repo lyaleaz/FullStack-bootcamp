@@ -1,0 +1,117 @@
+body {
+  background-color: #569837;
+
+  font-family: "Audiowide", sans-serif;
+}
+#buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #569837; /* Change this to your desired color */
+  display: flex;
+  justify-content: flex-start; /* Updated to move elements to the left */
+  align-items: center;
+  font-family: "Arial", sans-serif;
+}
+
+#buttons input[type="text"],
+#buttons button {
+  flex: 1;
+  padding: 30px; /* Increase padding for larger size */
+  box-sizing: border-box;
+  font-size: 16px;
+  color: black;
+  font-family: "Audiowide", sans-serif;
+}
+#buttons input {
+  background-color: #8fc377;
+  color: #8fc377;
+}
+#buttons input :hover {
+  color: #8fc377;
+}
+
+#buttons input[type="text"]:last-child {
+  text-align: center;
+  font-size: 16px;
+}
+#buttons button {
+  background-color: #5190cb;
+
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Add transition for a smooth effect */
+}
+
+#buttons button:hover {
+  background-color: #8fc377;
+  color: black;
+}
+#navcontainer {
+  background-color: #8fc377;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  margin-top: -10px;
+  text-align: center;
+}
+#game {
+  margin-right: auto;
+  margin-left: -10px;
+  align-items: center;
+}
+.frogface {
+  position: absolute;
+  left: 50px;
+  background-color: #53b28f;
+  height: 40px;
+  width: 100px;
+  border-radius: 45%;
+  top: 20px;
+  z-index: 2;
+}
+
+.eye {
+  background-color: #53b28f;
+  height: 30px;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+}
+
+.eye.one {
+  left: 22.5px;
+  top: -15px;
+}
+
+.eye.two {
+  right: 22.5px;
+  top: -15px;
+}
+
+.pupil {
+  background-color: #303332;
+  height: 15px;
+  width: 10px;
+  border-radius: 50%;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 3.5px;
+  position: absolute;
+  z-index: 3;
+}
+
+.pupil.one {
+  left: 2.5px;
+  top: 1px;
+  transform: rotate(-7deg);
+}
+
+.pupil.two {
+  right: 2.5px;
+  top: 1px;
+  transform: rotate(7deg);
+}
+.frog {
+  align-items: center;
+}
