@@ -1,61 +1,32 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Game catch the frog</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="stylesheet"
-      href="path/to/font-awesome/css/font-awesome.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Audiowide"
-    />
-  </head>
-  <body>
-    <div id="game">
-      <div id="navcontainer">Seconds left</div>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Game catch the frog</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide" />
+</head>
+<body>
+  <div id="game">
+    <div id="navcontainer">Seconds left</div>
 
-      <div class="tophattop">
-        <div class="tophatbottom"></div>
-      </div>
-      <div class="frog">
-        <div id="head" class="frogface">
-          <div class="sunglasses"></div>
-          <div class="eye one">
-            <div id="p" upilOne class="pupil one"></div>
-          </div>
-          <div class="eye two">
-            <div id="p" upilTwo class="pupil two"></div>
-          </div>
-          <div class="frogmouth">
-            <div id="mouth" class="froglip">
-              <div id="tongue" class=""></div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="tophattop">
+      <div class="tophatbottom"></div>
     </div>
+    <div class="divs" onclick="moveHello()">hello</div>
 
     <div id="buttons">
-      <input type="text" placeholder="your mind" id="input" />
+      <input type="text" placeholder="frog left" id="frogLeftInput" />
       <button id="startButton" onclick="startGame()">Start</button>
-      <input type="text" placeholder="level" id="input" />
+      <input type="text" placeholder="level" id="levelInput" />
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
     <script src="main.js" async defer></script>
   </body>
 </html>

@@ -13,6 +13,11 @@ body {
   justify-content: flex-start; /* Updated to move elements to the left */
   align-items: center;
   font-family: "Arial", sans-serif;
+  text-align: center;
+}
+#buttons input[type="text"]::placeholder {
+  text-align: center;
+  color: black;
 }
 
 #buttons input[type="text"],
@@ -112,6 +117,7 @@ body {
   top: 1px;
   transform: rotate(7deg);
 }
-.frog {
+.divs {
   align-items: center;
+  text-align: center;
 }
