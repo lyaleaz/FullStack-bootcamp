@@ -5,14 +5,15 @@ $("button").on("click", function () {
   let minRooms = $("#min-r-input").val();
   let maxRooms = $("#max-r-input").val();
   let immediate = $("#immed-y");
-
+  let parking = $("#park-y");
   let relevantApts = findRelevantApts(
     address,
     minPrice,
     maxPrice,
     minRooms,
     maxRooms,
-    immediate
+    immediate,
+    parking
   );
   renderApts(relevantApts);
 });
