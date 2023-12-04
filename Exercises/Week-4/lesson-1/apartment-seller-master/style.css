@@ -130,9 +130,6 @@ button:active {
   grid-area: lpark;
 }
 
-.result > .l-immediate {
-}
-
 .result > .address {
   grid-area: a;
 }
@@ -147,9 +144,6 @@ button:active {
 
 .result > .parking {
   grid-area: park;
-}
-
-.result > .immediate {
 }
 
 .no-match {
