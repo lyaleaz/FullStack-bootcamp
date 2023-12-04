@@ -1,13 +1,3 @@
-const renderApts = function (apartments) {
-  $("#results").empty();
-  console.log(apartments);
-  const source = document.getElementById("apartment-template").innerHTML;
-  const template = Handlebars.compile(source);
-  const html = template({ apartments: apartments });
-
-  $("#results").append(html);
-};
-
 $("button").on("click", function () {
   let address = $("#addr-input").val();
   let minPrice = $("#min-p-input").val();
@@ -26,5 +16,15 @@ $("button").on("click", function () {
   );
   renderApts(relevantApts);
 });
+const source = document.getElementById("apartment-template").innerHTML;
+const template = Handlebars.compile(source);
+const renderApts = function (apartments) {
+  $("#results").empty();
+  console.log(apartments);
+
+  const html = template({ apartments: apartments });
+
+  $("#results").append(html);
+};
 
 renderApts(apartments);
