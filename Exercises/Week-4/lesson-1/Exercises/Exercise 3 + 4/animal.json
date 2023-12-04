@@ -1,0 +1,32 @@
+{
+  "animals": [
+    {
+      "name": "Cow",
+      "weight": "650kg",
+      "endangered": false,
+      "livein":"wild",
+      "food":"Hay"
+      
+    },
+    {
+      "name": "Elephant",
+      "weight": "5000kg",
+        
+      "endangered": true,
+      "livein":"Forests",
+      "food":"Fruits"
+    },
+    {
+      "name": "Wolf",
+      "weight": "79kg",
+      "endangered": false,
+      "livein":"forests"
+    },
+    {
+      "name": "Squirrel",
+      "weight": "0.5kg",
+      "endangered": false,
+      "livein":"every habitat"
+    }
+  ]
+}

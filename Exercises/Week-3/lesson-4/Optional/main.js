@@ -57,7 +57,6 @@ function moveHello() {
   var helloElement = document.querySelector(".divs");
   var gameElement = document.getElementById("game");
 
-  // Move the hello element to a random position within the game element
   helloElement.style.position = "absolute";
   helloElement.style.left =
     Math.random() * (gameElement.offsetWidth - helloElement.offsetWidth) + "px";
