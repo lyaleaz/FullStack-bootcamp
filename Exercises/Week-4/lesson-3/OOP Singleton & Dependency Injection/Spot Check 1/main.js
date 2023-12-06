@@ -43,6 +43,7 @@ let relevantFeeder;
 
 if (weArePoor) {
   relevantFeeder = cheapFeeder;
+  n;
 } else {
   relevantFeeder = luxuryFeeder;
 }
