@@ -6,7 +6,7 @@ The function should receive a number
 Inside, you should create as many people using faker as the number received
 Each person should have a name, an image URL (avatar), and a company name
 Because faker uses random data, your result will be different, but it should be something like this:
-*/ const faker = require("faker");
+*/ const { faker }  = require('@faker-js/faker')
 function makeHuman(number) {
   const people = [];
   for (let i = 0; i < number; i++) {
