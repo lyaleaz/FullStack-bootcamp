@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="home">
+        <label for="search" class="search-label">Search:</label>
+        <input type="text" id="ingredient" class="search-input" />
+        <button
+          id="searchButton"
+          class="search-button"
+          onclick="displayResults()"
+        >
+          Search
+        </button>
+        <label>
+          <input type="checkbox" id="dairyCheckbox" />
+          Filter by Dairy
+        </label>
+        <label>
+          <input type="checkbox" id="glutenCheckbox" />
+          Filter by Gluten
+        </label>
+      </div>
+    </div>
+    <div id="results-container" class="divs"></div>
+
+    <script id="recipe-template" type="text/x-handlebars-template">
+      <div class="recipe">
+        <a href={{href}} target="_blank">{{title}}</a>
+        <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
+        <h2>Ingredients:</h2>
+        <div class="ingredients">
+          <ul class="ingredientsList">
+            {{#each (split ingredients ",")}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </div>
+    </script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+    <script>
+      Handlebars.registerHelper("split", function (string, separator) {
+        return string.split(separator);
+      });
+    </script>
+    <script src="APIManager.js"></script>
+    <script src="Render.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
