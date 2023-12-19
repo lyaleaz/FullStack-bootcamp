@@ -2,6 +2,7 @@ class Render {
   static displayError(message) {
     $("#results-container").html(`<div class="error">${message}</div>`);
   }
+
   static displayResults(recipes) {
     const resultsContainer = $("#results-container");
     resultsContainer.empty();
@@ -16,7 +17,15 @@ class Render {
         ingredients: recipe.ingredients.join(", "),
       });
 
-      resultsContainer.append(recipeHtml);
+      const recipeElement = $(recipeHtml);
+      resultsContainer.append(recipeElement);
+
+      // Add click listener to each image element
+      const imageElement = recipeElement.find(".recipe-thumbnail");
+      imageElement.on("click", function () {
+        const firstIngredient = recipe.ingredients[0];
+        alert("First Ingredient: " + firstIngredient);
+      });
     });
   }
 }
