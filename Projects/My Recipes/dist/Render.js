@@ -20,7 +20,6 @@ class Render {
       const recipeElement = $(recipeHtml);
       resultsContainer.append(recipeElement);
 
-      // Add click listener to each image element
       const imageElement = recipeElement.find(".recipe-thumbnail");
       imageElement.on("click", function () {
         const firstIngredient = recipe.ingredients[0];
