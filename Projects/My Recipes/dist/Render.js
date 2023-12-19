@@ -1,5 +1,7 @@
-
 class Render {
+  static displayError(message) {
+    $("#results-container").html(`<div class="error">${message}</div>`);
+  }
   static displayResults(recipes) {
     const resultsContainer = $("#results-container");
     resultsContainer.empty();
