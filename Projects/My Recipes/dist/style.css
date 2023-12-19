@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  justify-content: space-between;
 }
 
 .recipe {
@@ -53,6 +54,7 @@ body {
 
   background-color: white;
   width: 30%;
+  flex: 0 0 calc(30% - 20px);
 }
 body {
   margin: 0;
@@ -80,6 +82,16 @@ label {
   margin-right: 10px;
   color: black;
 }
+.checkbox-container {
+  display: flex;
+  margin-bottom: 10px;
+  margin-top: 80px;
+  margin-left: -250px;
+}
+
+.checkbox-container label {
+  margin-right: 10px;
+}
 
 .search-input {
   padding: 8px;
@@ -93,8 +105,6 @@ input[type="checkbox"] {
   margin-right: 5px;
 }
 
-/* Add more styling as needed */
-
 .recipe h3 {
   margin-bottom: 10px;
 }
@@ -102,4 +112,47 @@ input[type="checkbox"] {
 .recipe-thumbnail {
   max-width: 100px;
   margin-left: 300px;
+}
+.recipe-card {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: white;
+  width: 30%;
+  flex: 0 0 calc(30% - 20px); /* Adjust as needed */
+  transition: transform 0.3s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+}
+
+.recipe-details {
+  margin-top: 10px;
+}
+
+.recipe-details h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.ingredients {
+  margin-top: 10px;
+}
+
+.ingredients h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.ingredientsList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredientsList li {
+  font-size: 14px;
+  margin-bottom: 4px;
 }

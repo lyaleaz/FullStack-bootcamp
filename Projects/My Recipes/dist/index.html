@@ -15,15 +15,14 @@
   <body>
     <div class="container">
       <div class="home">
-        <label for="search" class="search-label">Search:</label>
-        <input type="text" id="ingredient" class="search-input" />
-        <button
-          id="searchButton"
-          class="search-button"
-          onclick="displayResults()"
-        >
-          Search
-        </button>
+        <input
+          type="text"
+          id="ingredient"
+          class="search-input"
+          placeholder="Search"
+        />
+      </div>
+      <div class="checkbox-container">
         <label>
           <input type="checkbox" id="dairyCheckbox" />
           Filter by Dairy
@@ -33,22 +32,34 @@
           Filter by Gluten
         </label>
       </div>
+
+      <button
+        id="searchButton"
+        class="search-button"
+        onclick="displayResults()"
+      >
+        Search
+      </button>
     </div>
+
     <div id="results-container" class="divs"></div>
 
     <script id="recipe-template" type="text/x-handlebars-template">
-      <div class="recipe">
-        <a href={{href}} target="_blank">{{title}}</a>
+      <div class="recipe-card">
+        <a href={{href}} target="_blank"> {{title}}</a>
         <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
-        <h2>Ingredients:</h2>
-        <div class="ingredients">
-          <ul class="ingredientsList">
-            {{#each (split ingredients ",")}}
-              <li>{{this}}</li>
-            {{/each}}
-          </ul>
-        </div>
 
+        <div class="recipe-details">
+
+          <div class="ingredients">
+            <h3>Ingredients:</h3>
+            <ul class="ingredientsList">
+              {{#each (split ingredients ",")}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
       </div>
     </script>
 
