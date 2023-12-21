@@ -8,7 +8,7 @@ class APIManager {
       }
 
       const response = await $.ajax({
-        url: `http://localhost:3000/recipes/${ingredient}?dairyFree=${dairyFree}&glutenFree=${glutenFree}`,
+        url: `http://localhost:3000/recipes/word/${ingredient}?dairyFree=${dairyFree}&glutenFree=${glutenFree}`,
         dataType: "json",
       });
 
@@ -19,6 +19,10 @@ class APIManager {
       }
     } catch (error) {
       console.error("Error fetching data:", error);
+
+      console.log("Error status:", error.status);
+      console.log("Error message:", error.statusText);
+
       Render.displayError("Error fetching data. Please try again later.");
     }
   }

@@ -7,17 +7,11 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: wheat;
 }
 
 .search-label {
   font-size: 18px;
   margin-bottom: 10px;
-}
-
-.search-input {
-  padding: 8px;
-  font-size: 16px;
 }
 
 .search-button {
@@ -37,7 +31,17 @@ body {
   background-color: #555555;
   color: white;
 }
+.uil.uil-youtube::before {
+  font-size: 24px;
+  color: #ff0000;
+}
 
+.uil-location-point:before {
+  color: #ff0000;
+}
+.a {
+  font-weight: bold;
+}
 .divs {
   margin-top: 20px;
   display: flex;
@@ -95,7 +99,7 @@ label {
 
 .search-input {
   padding: 8px;
-  border: 1px solid #fff;
+  border: 1px solid #000;
   border-radius: 4px;
   margin-right: 10px;
   border-radius: 10px;
@@ -110,8 +114,9 @@ input[type="checkbox"] {
 }
 
 .recipe-thumbnail {
-  max-width: 100px;
-  margin-left: 300px;
+  max-width: 250px;
+  margin-left: 200px;
+  border-radius: 25px;
 }
 .recipe-card {
   margin: 10px;
@@ -155,4 +160,25 @@ input[type="checkbox"] {
 .ingredientsList li {
   font-size: 14px;
   margin-bottom: 4px;
+}
+@media only screen and (max-width: 600px) {
+  .search-button {
+    padding: 10px 20px;
+  }
+
+  .recipe-card {
+    width: 100%;
+    flex: 0 0 100%;
+    margin-left: 0;
+  }
+
+  .recipe-thumbnail {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .search-input,
+  .checkbox-container {
+    margin-left: 0;
+  }
 }

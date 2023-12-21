@@ -4,6 +4,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const port = 3000;
+const { faker } = require("@faker-js/faker");
 
 app.use(cors());
 app.use(express.static("public"));

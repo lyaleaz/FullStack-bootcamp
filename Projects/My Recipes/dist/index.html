@@ -10,13 +10,25 @@
     <title>My Recipes</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
       <div class="home">
         <input
-          type="text"
+          type="search"
           id="ingredient"
           class="search-input"
           placeholder="Search"
@@ -33,34 +45,37 @@
         </label>
       </div>
 
-      <button
-        id="searchButton"
-        class="search-button"
-        onclick="displayResults()"
-      >
-        Search
-      </button>
+      <button id="searchButton" class="search-button">Search</button>
     </div>
 
     <div id="results-container" class="divs"></div>
 
     <script id="recipe-template" type="text/x-handlebars-template">
-      <div class="recipe-card">
-        <a href={{href}} target="_blank"> {{title}}</a>
-        <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
+        <div class="recipe-card">
+          <a style="font-weight: bold;"> {{title}}</a>
+          <a href={{href}} target="_blank">
+            <i class="uil uil-youtube"></i>
+          </a>
+          <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
+          <a>
+            <i class="uil uil-location-point"></i>
+          </a>
+           <a> {{strArea}}</a>
 
-        <div class="recipe-details">
+         <br></br> <a> Chef:  {{chef}} </a>
+      <br /><a>Rating: {{#stars rating}}<i class="uil uil-star" style="color: yellow;"></i>{{/stars}} </a>
+          <div class="recipe-details">
 
-          <div class="ingredients">
-            <h3>Ingredients:</h3>
-            <ul class="ingredientsList">
-              {{#each (split ingredients ",")}}
-                <li>{{this}}</li>
-              {{/each}}
-            </ul>
+            <div class="ingredients">
+              <h3>Ingredients:</h3>
+              <ul class="ingredientsList">
+                {{#each ingredients}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
     </script>
 
     <script
@@ -69,8 +84,12 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
     <script>
-      Handlebars.registerHelper("split", function (string, separator) {
-        return string.split(separator);
+      Handlebars.registerHelper("stars", function (rating) {
+        let stars = "";
+        for (let i = 0; i < rating; i++) {
+          stars += '<i class="uil uil-star" style="color: yellow; "></i>';
+        }
+        return new Handlebars.SafeString(stars);
       });
     </script>
     <script src="APIManager.js"></script>
