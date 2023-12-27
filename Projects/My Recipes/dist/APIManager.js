@@ -1,5 +1,11 @@
 class APIManager {
-  static async searchRecipes(ingredient, dairyFree, glutenFree) {
+  static async searchRecipes(
+    ingredient,
+    dairyFree,
+    glutenFree,
+    page = 1,
+    PageSize = 5
+  ) {
     try {
       if (!ingredient) {
         const errorMessage = "Invalid input: Please enter a valid ingredient";

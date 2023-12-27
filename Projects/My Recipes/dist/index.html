@@ -46,36 +46,52 @@
       </div>
 
       <button id="searchButton" class="search-button">Search</button>
+      <button id="PreviousButton" class="PreviousButton">Previous</button>
+      <button id="NextButton" class="NextButton">Next</button>
     </div>
 
     <div id="results-container" class="divs"></div>
 
     <script id="recipe-template" type="text/x-handlebars-template">
-        <div class="recipe-card">
-          <a style="font-weight: bold;"> {{title}}</a>
-          <a href={{href}} target="_blank">
-            <i class="uil uil-youtube"></i>
-          </a>
-          <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
-          <a>
-            <i class="uil uil-location-point"></i>
-          </a>
-           <a> {{strArea}}</a>
+                         <div class="recipe-card">
+                           <a style="font-weight: bold;"> {{title}}</a>
+                           <a href={{href}} target="_blank">
+                             <i class="uil uil-youtube"></i>
+                           </a>
+                           <img class="recipe-thumbnail" src="{{thumbnail}}" alt="{{title}}" />
+                           <a>
+                             <i class="uil uil-location-point"></i>
+                           </a>
+                            <a> {{strArea}}</a>
 
-         <br></br> <a> Chef:  {{chef}} </a>
-      <br /><a>Rating: {{#stars rating}}<i class="uil uil-star" style="color: yellow;"></i>{{/stars}} </a>
-          <div class="recipe-details">
+                          <br></br> <a> Chef:  {{chef}} </a>
+                       <br /><a>Rating: {{#stars rating}}<i class="uil uil-star" style="color: yellow;"></i>{{/stars}} </a>
+                           <div class="recipe-details">
 
-            <div class="ingredients">
-              <h3>Ingredients:</h3>
-              <ul class="ingredientsList">
-                {{#each ingredients}}
-                  <li>{{this}}</li>
-                {{/each}}
-              </ul>
-            </div>
-          </div>
-        </div>
+                             <div class="ingredients">
+                               <h3>Ingredients:</h3>
+                               <ul class="ingredientsList">
+                                 {{#each ingredients}}
+                                   <li>{{this}}</li>
+                                 {{/each}}
+                               </ul>
+                             </div>
+                 </div>
+            <div class="recipe-comments">
+                       <h3>Comments:</h3>
+
+                        <form class="add-comment-form">
+                   <label for="newComment">Add a Comment:</label>
+                   <input type="text" id="newComment" name="newComment" required/>
+                   <button>Add Comment</button>
+                 </form>
+                     </div>
+
+            <div class="Email_us">
+                         <button onclick="sendEmail('{{title}}','{{href}}')">Email us</button>
+
+      </div>
+                         </div>
     </script>
 
     <script
@@ -83,15 +99,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-    <script>
-      Handlebars.registerHelper("stars", function (rating) {
-        let stars = "";
-        for (let i = 0; i < rating; i++) {
-          stars += '<i class="uil uil-star" style="color: yellow; "></i>';
-        }
-        return new Handlebars.SafeString(stars);
-      });
-    </script>
+
     <script src="APIManager.js"></script>
     <script src="Render.js"></script>
     <script src="main.js"></script>

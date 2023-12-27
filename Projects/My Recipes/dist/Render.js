@@ -12,7 +12,6 @@ class Render {
 
     recipes.forEach(function (recipe) {
       const recipeHtml = template(recipe);
-
       const recipeElement = $(recipeHtml);
       resultsContainer.append(recipeHtml);
     });

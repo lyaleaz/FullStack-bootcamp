@@ -9,7 +9,9 @@
         "ignore": [
           "width: fit-content",
           "height: fit-content",
-          "user-select"
+          "user-select",
+          "-webkit-text-size-adjust",
+          "-webkit-mask-image"
         ]
       }
     ]
