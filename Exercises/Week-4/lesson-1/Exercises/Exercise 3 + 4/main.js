@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Fetch the JSON file
   fetch("animal.json")
     .then((response) => response.json())
     .then((data) => {
-      // Access the data and manipulate the HTML
       const animalInfoElement = document.getElementById("animal-info");
 
       data.animals.forEach((animal) => {
