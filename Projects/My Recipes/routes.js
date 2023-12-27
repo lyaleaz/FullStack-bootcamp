@@ -30,7 +30,8 @@ router.get("/word/:word", async (req, res) => {
           title: recipe.title,
           href: recipe.href,
           //thumbnail: recipe.thumbnail,
-          thumbnail: giphyAPI.data?.data?.images?.original?.url,
+          thumbnail: giphyAPI.data?.data[0]?.images?.original?.url,
+
           strArea: recipe.strArea,
           ingredients: recipe.ingredients,
           rating: RandomNum(),
