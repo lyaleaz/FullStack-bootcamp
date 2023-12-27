@@ -52,7 +52,7 @@ $("#nextButton").on("click", function () {
     $("#dairyCheckbox").is(":checked"),
     $("#glutenCheckbox").is(":checked"),
     currentPage,
-    resultsPerPage
+    resultPage
   );
 });
 $("#PreviousButton").on("click", function () {
@@ -63,6 +63,6 @@ $("#PreviousButton").on("click", function () {
     $("#dairyCheckbox").is(":checked"),
     $("#glutenCheckbox").is(":checked"),
     currentPage,
-    resultsPerPage
+    resultPage
   );
 });
