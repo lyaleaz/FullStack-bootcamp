@@ -21,7 +21,7 @@ router.get("/word/:word", async (req, res) => {
       response.data.results.map(async (recipe) => {
         const randomFirstName = faker.name.firstName();
         const randomLastName = faker.name.lastName();
-        const giphyAPI = axios.get(
+        const giphyAPI = await axios.get(
           `http://api.giphy.com/v1/gifs/search?q=food&api_key=${API_KEY}`
         );
         console.log("test " + giphyAPI.data?.data[0]?.images?.original?.url);
