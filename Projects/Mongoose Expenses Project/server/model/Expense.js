@@ -8,6 +8,5 @@ var expenseSchema = new Schema({
   date: Date,
   group: String,
 });
-//console.log(expenseSchema);
 const Expense = mongoose.model("Expense", expenseSchema);
 module.exports = Expense;

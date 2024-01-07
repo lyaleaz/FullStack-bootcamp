@@ -2,25 +2,24 @@ const express = require("express");
 const router = express.Router();
 const moment = require("moment");
 const Expense = require("../model/Expense");
-// const fs = require('fs');
-// const file = fs.readFileSync('./expenses.json', 'utf8')
-// let jsonObject = JSON.parse(file);
-// jsonObject.forEach(element => {
-//     data = new Expense(element)
-//     console.log(data)
-//      data.save()
-// });
-/* router.get("/expenses", function (req, res) {
+/* const fs = require("fs");
+const file = fs.readFileSync("./expenses.json", "utf8");
+let jsonObject = JSON.parse(file);
+jsonObject.forEach((element) => {
+  data = new Expense(element);
+  console.log(data);
+  data.save();
+}); */
+router.get("/expenses", function (req, res) {
   Expense.find({})
     .sort({
-      date: 1, //s8er ll kber
-      // date: -1 lkber ll s8er
+      date: 1,
     })
     .then(function (expenses) {
       res.send(expenses);
     });
-}); */
-/* router.post("/expense", function (req, res) {
+});
+router.post("/expense", function (req, res) {
   const item = req.body.item;
   const amount = req.body.amount;
   const group = req.body.group;
@@ -36,7 +35,7 @@ const Expense = require("../model/Expense");
     );
     res.send(newExpense);
   });
-}); */
+});
 router.put("/update/:group1/:group2", function (req, res) {
   const group1 = req.params.group1;
   const group2 = req.params.group2;
@@ -84,7 +83,7 @@ router.get("/expenses", function (req, res) {
   if (!d1 && d2) {
     Expense.find({})
       .sort({
-        date: 1, //s8er ll kber // date: -1 lkber ll s8er
+        date: 1,
       })
       .then(function (expenses) {
         res.send(expenses);
