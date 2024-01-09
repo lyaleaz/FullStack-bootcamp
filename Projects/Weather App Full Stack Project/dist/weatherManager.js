@@ -6,9 +6,14 @@ class WeatherManager {
     return this.weatherList;
   }
   async getCityName(cityName) {
-    const weather = await $.get(`/weathers/${cityName}`);
-    this.weatherList.push(weather);
-    return weather;
+    try {
+      const weather = await $.get(`/weathers/${cityName}`);
+      this.weatherList.push(weather);
+      return weather;
+    } catch (error) {
+      console.error("Error fetching weather data:", error.responseJSON);
+      alert("City not found");
+    }
   }
 
   async addToList(weather) {
@@ -39,6 +44,18 @@ class WeatherManager {
     weather.inData = true;
     const i = this.weatherList.findIndex((x) => x.id === parseInt(weather.id));
     this.weatherList[i] = weather;
+  }
+  async getWeatherByCityName(cityname) {
+    try {
+      const theWeather = await $.get(`/weathers/${cityname}`);
+      this.addToTheList(theWeather);
+      return theWeather;
+    } catch (error) {
+      console.error("Error fetching weather data:", error.responseJSON);
+      if (error.responseJSON === "City not found") {
+        alert("City not found");
+      }
+    }
   }
 
   async getAllTheWeathersData() {

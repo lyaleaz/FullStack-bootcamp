@@ -4,10 +4,15 @@ class ApiManager {
     this.DataList = [];
   }
   getTheData(cityName) {
-    const weather = axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b9bc77a14f842265bdf461ea5338c13e&units=metric`
-    );
-    return weather;
+    try {
+      const weather = axios.get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=b9bc77a14f842265bdf461ea5338c13e&units=metric`
+      );
+      return weather;
+    } catch (error) {
+      console.error("Error fetching weather data:", error.message);
+      throw new Error("Invalid input");
+    }
   }
   getList() {
     return this.DataList;

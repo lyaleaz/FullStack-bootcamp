@@ -10,7 +10,9 @@ mongoDB(); */
 $("#searchButton").on("click", async function () {
   const textSearch = $("#searchInput").val();
   const weatherData = await Manager.getCityName(textSearch);
-  rend.display([weatherData]);
+  if (weatherData) {
+    rend.display([weatherData]);
+  }
 });
 $("#cities-container").on("click", ".ButtonSave", function () {
   $("#cities-container").empty();
