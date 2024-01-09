@@ -16,8 +16,18 @@ const DataFilter = function (dataWeather) {
     };
   });
 };
-
 router.get("/weathers/:cityName", async (req, res) => {
+  const cityName = req.params.cityName;
+  const data = apiManager.getTheData(cityName);
+  const filterData = DataFilter(data);
+
+  filterData.then((weatherData) => {
+    apiManager.DataList.push(weatherData);
+    res.json(weatherData);
+  });
+});
+
+/* router.get("/weathers/:cityName", async (req, res) => {
   const cityName = req.params.cityName;
   const data = apiManager.getTheData(cityName);
   const filterData = DataFilter(data);
@@ -27,14 +37,30 @@ router.get("/weathers/:cityName", async (req, res) => {
     apiManager.DataList.push(weatherData);
     res.send(weatherData);
   });
-});
-router.post("/weathers/:id", function (req, res) {
+}); */
+/* router.post("/weathers/:id", function (req, res) {
   const id = req.params.id;
   console.log(apiManager.getList());
   const newCity = new Weather(
     apiManager.getTheData().find((data) => data.id === parsInt(id))
   );
   newCity.save().then(() => res.send(newCity));
+}); */
+/* router.post("/weathers/:id", function (req, res) {
+  const id = req.params.id;
+  const newCity = new Weather(
+    apiManager.getTheData().find((data) => data.id === parseInt(id))
+  );
+  newCity.save().then(() => res.send(newCity));
+}); */
+router.post("/weathers/:id", function (req, res) {
+  const weatherId = req.params.id;
+  const newData = new Weather(
+    apiManager.DataList.find(
+      (weatherID) => weatherID.id === parseInt(weatherId)
+    )
+  );
+  newData.save().then(() => res.send(newData));
 });
 
 router.post("/weathers", function (req, res) {

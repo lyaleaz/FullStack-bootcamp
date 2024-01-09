@@ -12,5 +12,16 @@ class ApiManager {
   getList() {
     return this.DataList;
   }
+  DataFilter(dataWeather) {
+    return dataWeather.then((data) => {
+      return {
+        id: data.data.id,
+        name: data.data.name,
+        conditionPic: data.data.weather[0].icon,
+        tempe: data.data.main.temp,
+        condition: data.data.weather[0].description,
+      };
+    });
+  }
 }
 module.exports = ApiManager;

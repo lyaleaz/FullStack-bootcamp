@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Weather Forecast App</title>
+  </head>
+  <body>
+    <div class="weather-container">
+      <h2>Weather Forecast</h2>
+
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Enter location" />
+        <!-- <input type="submit" value="search" id="searchButton" />-->
+        <button id="searchButton">search</button>
+      </div>
+    </div>
+
+    <div class="res" id="cities-container"></div>
+
+    <script id="city-template" type="text/x-handlebars-template">
+      {{#each data}}
+        <div class="weather-card">
+          <h2>{{this.name}}</h2>
+          <p class="temperature">{{this.tempe}} &#8451;</p>
+          <p class="condition">{{this.condition}}</p>
+
+          <img
+            class="weather-icon"
+            src="https://openweathermap.org/img/w/{{this.conditionPic}}.png"
+            alt="Weather Icon"
+          />
+          <!--  <i
+            class="uil uil-redo"
+            style="margin-bottom: 40px; display: flex; justify-items: start; "
+          ></i>-->
+          <div class="button-container">
+
+            {{#if this.inData}}
+
+              <i
+                class="fa fa-trash ButtonDel"
+                id={{this.id}}
+                style="margin-bottom: 40px; display: flex; justify-items: start; color: red;"
+              ></i>
+            {{else}}
+
+              <i
+                class="fa fa-plus ButtonSave"
+                id={{this.id}}
+                style="margin-bottom: 40px; display: flex; justify-items: start; color: green;"
+              ></i>
+            {{/if}}
+          </div>
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="weatherManager.js"></script>
+    <script src="render.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
