@@ -59,7 +59,7 @@ class WeatherManager {
   }
 
   async getAllTheWeathersData() {
-    const allDB = await $.get(`/weathers`);
+    const allDB = $.get(`/weathers`);
     allDB.forEach((element) => {
       element.inData = true;
     });

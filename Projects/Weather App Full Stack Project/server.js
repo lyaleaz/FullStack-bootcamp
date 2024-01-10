@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const path = require("path");
 
-const apiRoutes = require("./routes/api");
+const apiRoutes = require("./routes/WeatherApi");
 const mongoose = require("mongoose");
 
 app.use(bodyParser.json());
