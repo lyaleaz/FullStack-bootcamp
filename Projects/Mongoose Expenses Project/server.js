@@ -23,5 +23,5 @@ app.use(apiRoutes);
     });
 }); */
 app.listen(3000, function () {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port 3000`);
 });
