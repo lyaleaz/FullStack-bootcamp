@@ -1,13 +1,19 @@
 import React from "react";
+import Letter from "./Letter";
 
-const Solution = () => {
-  const wordHint = "Hangman";
-  const emptySpaces = Array(wordHint.length).fill("_").join(" ");
-
+const Solution = ({ letterStatus, wordHint, hint }) => {
   return (
     <div>
-      <p>{emptySpaces}</p>
-      <p>Hint: {wordHint}</p>
+      <br></br>
+      {wordHint.split("").map((letter, index) => (
+        <Letter
+          key={index}
+          value={letter}
+          selected={letterStatus[letter]}
+          onLetterSelect={() => {}}
+        />
+      ))}
+      <p>Hint: {hint}</p>
     </div>
   );
 };

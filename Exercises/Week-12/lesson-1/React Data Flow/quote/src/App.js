@@ -1,46 +1,76 @@
 import "./App.css";
+import Score from "./components/Score";
+import Solution from "./components/Solution";
+import { useState, useEffect } from "react";
 
-const App = () => {
-  //spot check 1
-  /*  const Task = ({ task, markComplete }) => {
-    const complete = () => markComplete(task.text);
-    return (
-      <div>
-        {task.text} -<button onClick={complete}>Complete</button>
-      </div>
-    );
+function App() {
+  const words = [
+    "react",
+    "javascript",
+    "hangman",
+    "Dom",
+    "Ahmad",
+    "ammerjmal",
+    "computer",
+    "python",
+  ];
+  const [word, setWord] = useState("");
+  const [guessedLetters, setGuessedLetters] = useState([]);
+  const [remainingAttempts, setRemainingAttempts] = useState(6);
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    setWord(words[randomIndex]);
+    // eslint-disable-next-line
+  }, []);
+
+  const handleLetterClick = (letter) => {
+    if (!guessedLetters.includes(letter)) {
+      setGuessedLetters([...guessedLetters, letter]);
+      if (!word.includes(letter)) {
+        setRemainingAttempts(remainingAttempts - 1);
+      }
+    }
   };
 
-  const SpotCheck = () => {
-    const [tasks, setTasks] = useState([
-      { text: "Take out trash", complete: false },
-      { text: "Trash talk Carrie", complete: true },
-      { text: "Carry boxes upstairs", complete: false },
-    ]);
+  const displayWord = word
+    .split("")
+    .map((letter) => (guessedLetters.includes(letter) ? letter : "_"))
+    .join(" ");
 
-    const markComplete = (text) => {
-      let newTasks = [...tasks];
-      newTasks.find((t) => t.text === text).complete = true;
-      setTasks(newTasks);
-    };
+  const isGameOver = remainingAttempts === 0 || !displayWord.includes("_");
 
-    return tasks
-      .filter((t) => !t.complete)
-      .map((t) => <Task key={t.text} task={t} markComplete={markComplete} />);
+  const renderAlphabetButtons = () => {
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+    return alphabet.split("").map((letter) => (
+      <button
+        key={letter}
+        onClick={() => handleLetterClick(letter)}
+        disabled={guessedLetters.includes(letter) || isGameOver}
+      >
+        {letter}
+      </button>
+    ));
   };
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
-
-  return <SpotCheck />; */
-  //Exercise1
-
-  const Ex1Data = {
-    images: [
-      "https://hips.hearstapps.com/hmg-prod/images/lychee-fruit-sugar-1530136136.jpg?crop=1xw:1xh;center,top&resize=640:*",
-      "https://hips.hearstapps.com/hmg-prod/images/mango-fruit-sugar-1530136260.jpg?crop=1xw:1xh;center,top&resize=640:*",
-      "https://hips.hearstapps.com/hmg-prod/images/cherries-sugar-fruit-1530136329.jpg?crop=1xw:1xh;center,top&resize=640:*",
-    ],
-    currentImg: 0,
-  };
-};
+  return (
+    <div className="App">
+      <h1>Hangman Game</h1>
+      <p>
+        Remaining Attempts: <Score remainingAttempts={remainingAttempts} />
+      </p>
+      <Solution displayWord={displayWord} />
+      <div>Hint : It's Must be a Name or Coding Language.</div>
+      <div>{renderAlphabetButtons()}</div>
+      {isGameOver && (
+        <p>{remainingAttempts === 0 ? "Game Over! Try again." : "You Win!"}</p>
+      )}
+      <button onClick={refreshPage}>restart</button>
+    </div>
+  );
+}
 
 export default App;

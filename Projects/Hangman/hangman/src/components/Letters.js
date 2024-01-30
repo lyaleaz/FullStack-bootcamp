@@ -1,13 +1,17 @@
 import React from "react";
 import Letter from "./Letter";
-
-const Letters = () => {
-  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const Letters = ({ letterStatus, onLetterSelect }) => {
+  const alphabet = Object.keys(letterStatus);
 
   return (
     <div>
-      {alphabet.split("").map((letter) => (
-        <Letter key={letter} value={letter} />
+      {alphabet.map((letter) => (
+        <Letter
+          key={letter}
+          value={letter}
+          selected={letterStatus[letter]}
+          onLetterSelect={() => onLetterSelect(letter)}
+        />
       ))}
     </div>
   );

@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import "../App.css";
 
-const Score = ({ guessesLeft }) => {
+const Score = ({ score, remainingGuesses }) => {
+  const [scoreClass, setScoreClass] = useState("");
+  const Guesses = 5;
+
+  const scoreColor = score >= 80 ? "green" : score >= 50 ? "orange" : "red";
+
   return (
-    <div>
-      <p> {guessesLeft}</p>
+    <div className={`score-container ${scoreClass}`}>
+      <p>the score is</p>
+      <p className="score" style={{ color: scoreColor }}>
+        {score}
+      </p>
+      <p>
+        <br />
+        Remaining guesses: {remainingGuesses}
+      </p>
     </div>
   );
 };
