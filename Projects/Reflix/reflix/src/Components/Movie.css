@@ -1,0 +1,38 @@
+.movie-class {
+  color: wheat;
+}
+.body {
+  background-color: black;
+  display: flex;
+}
+.movie {
+  position: relative;
+  width: 25vw;
+  margin-left: 15px;
+  margin-right: 50px;
+}
+
+.movie img {
+  height: 65vh;
+  width: 25vw;
+  margin: 10px;
+  border-radius: 8px;
+  display: inline-block;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.search {
+  width: 25%;
+  background-color: purple;
+  height: 40px;
+  border-radius: 10px;
+}
+.add-icon {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+  color: wheat;
+  border-radius: 10px;
+}

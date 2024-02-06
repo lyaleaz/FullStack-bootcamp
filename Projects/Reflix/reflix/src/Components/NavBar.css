@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+  margin: 0; /* Remove default margin */
+}
+nav {
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.Home-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-family: "Dancing Script", cursive;
+}
+
+.Catalog-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-family: "Dancing Script", cursive;
+}
+
+.navbar-reflix {
+  color: rgb(40, 105, 186);
+  margin-left: auto;
+}

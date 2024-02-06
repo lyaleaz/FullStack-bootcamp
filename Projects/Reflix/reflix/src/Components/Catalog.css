@@ -1,0 +1,20 @@
+.body {
+  background-color: black;
+}
+h2 {
+  margin-right: 100px;
+}
+
+.search {
+  width: 25%;
+  background-color: yellow;
+  height: 55px;
+  border-radius: 10px;
+}
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+}
+.budget-class {
+  margin-left: 700px;
+}

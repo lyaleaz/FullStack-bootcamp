@@ -1,0 +1,87 @@
+/* Landing.css */
+
+body {
+  background-color: black;
+  margin: 0;
+  height: 100vh;
+}
+
+.divs {
+  display: table;
+  margin: auto;
+}
+
+.content-container {
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 20px;
+  text-align: center;
+}
+h1 {
+  color: black;
+}
+.blue-Box,
+.red-Box,
+.green-Box,
+.yello-Box {
+  margin: 0;
+}
+
+.blue-Box,
+.red-Box,
+.green-Box,
+.yello-Box {
+  width: 250px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 10px;
+  vertical-align: middle;
+  line-height: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+.blue-Box {
+  background-color: rgb(94, 94, 204);
+}
+
+.red-Box {
+  background-color: rgb(197, 88, 88);
+}
+
+.green-Box {
+  background-color: rgb(51, 181, 51);
+}
+
+.yello-Box {
+  background-color: rgb(236, 236, 62);
+}
+
+.boxs {
+  display: flex;
+  gap: 8vh;
+  justify-content: center;
+}
+
+/* Additional styling for box alignment */
+.blue-Box,
+.red-Box,
+.green-Box,
+.yello-Box {
+  display: inline-block;
+}
+
+.box {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 16vh;
+  border-radius: 8px;
+}
