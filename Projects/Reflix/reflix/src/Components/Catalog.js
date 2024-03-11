@@ -23,7 +23,7 @@ export default function Catalog(props) {
     <div>
       <TextField
         className="search"
-        label="Search movies by title"
+        label="Search  by title"
         variant="outlined"
         value={searchTerm}
         onChange={handleSearchChange}

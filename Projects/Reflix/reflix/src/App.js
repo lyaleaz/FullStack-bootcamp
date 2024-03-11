@@ -101,8 +101,8 @@ function App() {
   return (
     <Router>
       <div>
-        <NavBar />
         <Routes>
+          <NavBar />
           <Route
             path="/"
             element={<Landing users={users} selectUser={selectUser} />}
